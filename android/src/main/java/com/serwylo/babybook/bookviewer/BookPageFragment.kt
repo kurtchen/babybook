@@ -35,9 +35,22 @@ class BookPageFragment(
                     Picasso.get()
                         .load(image)
                         .fit()
-                        .centerCrop()
+                        .centerInside()
                         .into(binding.image)
                 }
+            }
+        }
+
+        binding.image.setOnClickListener {
+            if (binding.title.visibility == View.GONE) {
+                binding.title.visibility = View.VISIBLE
+            } else {
+                binding.title.visibility = View.GONE
+            }
+            if (binding.text.visibility == View.GONE) {
+                binding.text.visibility = View.VISIBLE
+            } else {
+                binding.text.visibility = View.GONE
             }
         }
 
